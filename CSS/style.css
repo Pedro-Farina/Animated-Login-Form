@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /*unidade de medida (vh): 1/100 da altura da viewport - (vw) está para 1/100 da width da viewport*/
+    background: url(../Imagens/bg3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: animateBg 11s linear infinite;
+}
+
+@keyframes animateBg {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.login-box {
+    position: relative;
+    width: 400px;
+    height: 480px;
+    background: transparent;
+    border-radius: 25px;
+    border: 1px solid rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 40px 0 5px;
+}
+
+.input-box .icon /*dentro da div de classe input-box e dentro do span de classe icon*/ {
+    position: absolute;
+    right: 5px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 50px;
+}
+
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: .8em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot input label {
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+#login-button {
+    width: 100%;
+    height: 40px;
+    background: orange;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 300;
+}
+
+.register-account {
+    margin: 25px 0 10px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.register-account a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.register-account a:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+@media (max-width: 360px) {
+    .login-box {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        border-radius: 0;
+    }
+
+    .input-box {
+        width: 290px;
+    }
+}
